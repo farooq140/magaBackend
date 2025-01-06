@@ -9,7 +9,8 @@
 // }
 const ayncHandler=(requstHandler)=>{
      (req,res,next)=>{
-          Promise.resolve(requstHandler(req,res,next)).catch((error)=>{next(error)})
+          Promise.resolve(requstHandler(req,res,next))
+          .catch((error)=>{next(error)})
      }
 }
 
